@@ -18,6 +18,13 @@ const db = mysql.createPool({
   queueLimit: 0,
 });
 
+const cors = require("cors");
+app.use(cors({
+  origin: "*",
+  methods: ["GET","POST","PUT","DELETE"],
+  allowedHeaders: ["Content-Type","Authorization"]
+}));
+
 // ======= CREATE DRIVER =======
 app.post("/drivers", async (req, res) => {
   try {
