@@ -24,6 +24,7 @@ app.use(cors({
   methods: ["GET","POST","PUT","DELETE"],
   allowedHeaders: ["Content-Type","Authorization"]
 }));
+app.use(express.json());
 
 // ======= CREATE DRIVER =======
 app.post("/drivers", async (req, res) => {
